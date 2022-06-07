@@ -83,7 +83,7 @@ public class Library {
 
         int position = 0;
         for (int i = 0; i < books.length; i++) {
-            if (books[i] != null && books[i].getAuthor().equals(author)) {
+            if (books[i].getAuthor().equals(author)) { // Bug-04a - Missing condition: books[i] != null && ...
                 authorBooks[position] = books[i];
                 position++;
             }
