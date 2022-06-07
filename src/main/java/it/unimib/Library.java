@@ -29,7 +29,7 @@ public class Library {
     }
 
     public int getLibraryCapacity() {
-        return books.length;
+        return books.length - 1; // Bug-01c (Correct version is: return books.length;
     }
 
     public Book findBook(Book book) {
