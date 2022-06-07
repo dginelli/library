@@ -65,10 +65,11 @@ public class Library {
                 if (books[i] != null && books[i].equals(book)) {
                     borrowedBook = books[i];
                     books[i] = null;
+                    return borrowedBook;
                 }
             }
         }
-        return borrowedBook;
+        return null;
     }
 
     public Book[] findBooksAuthor(Author author) {

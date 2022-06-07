@@ -219,13 +219,18 @@ public class AppTest {
     public void testBorrow1() {
         Book[] books = new Book[3];
         Book book1 = new Book("Siddharta", new Author("Hermann", "Hesse", 1877), 142);
+        Book book2 = new Book("La Divina Commedia", new Author("Dante", "Alighieri", 1265), 232);
 
         Library library = new Library(books);
         library.addBookToLibrary(book1);
+        library.addBookToLibrary(book2);
 
-        assertNotNull(library.borrow(book1));
-        assertNull(library.findBook(book1));
-        assertNull(library.borrow(book1));
+        Book borrowedBook = library.borrow(book2);
+
+        assertEquals(book2, borrowedBook);
+        assertNotNull(borrowedBook);
+        assertNull(library.findBook(book2));
+        assertNull(library.borrow(book2));
     }
 
     @Test
