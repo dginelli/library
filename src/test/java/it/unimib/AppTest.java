@@ -97,6 +97,12 @@ public class AppTest {
     }
 
     @Test
+    public void testGetLibraryCapacity3() {
+        Library library = new Library(null);
+        assertTrue(library.getLibraryCapacity() > 0);
+    }
+
+    @Test
     public void testFindBook1() {
         Book[] books = new Book[3];
         Book book1 = new Book("Siddharta", new Author("Hermann", "Hesse", 1877), 142);
