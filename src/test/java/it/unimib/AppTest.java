@@ -52,27 +52,6 @@ public class AppTest {
     }
 
     @Test
-    public void testGetLibraryCapacity1() {
-        Book[] books = new Book[3];
-        Book book1 = new Book("Siddharta", new Author("Hermann", "Hesse", 1877), 142);
-        Book book2 = new Book("La Divina Commedia", new Author("Dante", "Alighieri", 1265), 232);
-        Book book3 = new Book("Ivanhoe", new Author("Walter", "Scott", 1771), 544);
-
-        Library library = new Library(books);
-        library.addBookToLibrary(book1);
-        library.addBookToLibrary(book2);
-        library.addBookToLibrary(book3);
-
-        assertEquals(3, library.getLibraryCapacity());
-    }
-
-    @Test
-    public void testGetLibraryCapacity2() {
-        Library library = new Library(null);
-        assertEquals(10, library.getLibraryCapacity());
-    }
-
-    @Test
     public void testAddBookToLibrary2() {
         Book[] books = new Book[1];
         Book book1 = new Book("Siddharta", new Author("Hermann", "Hesse", 1877), 142);
@@ -94,6 +73,27 @@ public class AppTest {
 
         assertTrue(library.addBookToLibrary(book1));
         assertFalse(library.addBookToLibrary(book2));
+    }
+
+    @Test
+    public void testGetLibraryCapacity1() {
+        Book[] books = new Book[3];
+        Book book1 = new Book("Siddharta", new Author("Hermann", "Hesse", 1877), 142);
+        Book book2 = new Book("La Divina Commedia", new Author("Dante", "Alighieri", 1265), 232);
+        Book book3 = new Book("Ivanhoe", new Author("Walter", "Scott", 1771), 544);
+
+        Library library = new Library(books);
+        library.addBookToLibrary(book1);
+        library.addBookToLibrary(book2);
+        library.addBookToLibrary(book3);
+
+        assertEquals(3, library.getLibraryCapacity());
+    }
+
+    @Test
+    public void testGetLibraryCapacity2() {
+        Library library = new Library(null);
+        assertEquals(10, library.getLibraryCapacity());
     }
 
     @Test
