@@ -97,6 +97,25 @@ public class AppTest {
     }
 
     @Test
+    public void testGetLibraryCapacity3() {
+        Library library = new Library(null);
+        assertTrue(library.getLibraryCapacity() > 0);
+    }
+
+    @Test
+    public void testGetLibraryCapacity4() {
+        Book[] books = new Book[3];
+        Book book1 = new Book("Siddharta", new Author("Hermann", "Hesse", 1877), 142);
+        Library library = new Library(books);
+        library.addBookToLibrary(book1);
+
+        Book[] books2 = new Book[library.getLibraryCapacity()];
+        Library library2 = new Library(books2);
+
+        assertNotNull(library2.getBooks());
+    }
+
+    @Test
     public void testFindBook1() {
         Book[] books = new Book[3];
         Book book1 = new Book("Siddharta", new Author("Hermann", "Hesse", 1877), 142);
