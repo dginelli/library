@@ -33,7 +33,8 @@ public class Library {
     }
 
     public Book findBook(Book book) {
-        for (int i = 0; i < books.length - 1; i++) { // Bug-02a (Correct version is: i < books.length;
+        // Bug-02a (Correct version is: i < books.length;)
+        for (int i = 0; i < books.length - 1; i++) {
             if (books[i] != null && books[i].equals(book)) {
                 return books[i];
             }
