@@ -51,7 +51,8 @@ public class Library {
 
     public boolean isBookAvailable(Book book) {
         for (int i = 0; i < books.length; i++) {
-            if (books[i] != null && books[i].equals(book)) { // Bug-03a - Missing condition:  && !books[i].isBooked()
+            // Bug-03a - Missing condition: && !books[i].isBooked()
+            if (books[i] != null && books[i].equals(book)) {
                 return true;
             }
         }
