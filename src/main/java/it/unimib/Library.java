@@ -5,7 +5,8 @@ public class Library {
     private final Book[] books;
 
     public Library() {
-        books = new Book[DEFAULT_SIZE];
+        // Bug-05a (Correct version: books = new Book[DEFAULT_SIZE];)
+        books = new Book[1];
     }
 
     public Library(Book[] books) {
@@ -29,7 +30,7 @@ public class Library {
     }
 
     public int getLibraryCapacity() {
-        return books.length - 1; // Bug-01a (Correct version is: return books.length;
+        return books.length;
     }
 
     public Book findBook(Book book) {
