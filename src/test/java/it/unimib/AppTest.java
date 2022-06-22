@@ -52,7 +52,6 @@ public class AppTest {
         assertTrue(library.addBookToLibrary(book3));
     }
 
-    @Ignore
     @Test
     public void testGetLibraryCapacity1() {
         Book[] books = new Book[3];
