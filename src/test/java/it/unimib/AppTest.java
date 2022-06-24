@@ -11,6 +11,9 @@ public class AppTest {
     public void testLibraryDefaultConstructor() {
         Library library = new Library();
         assertEquals(10, library.getBooks().length);
+        assertEquals("Siddharta", library.getBooks()[0].getTitle());
+        assertEquals("La Divina Commedia", library.getBooks()[1].getTitle());
+        assertEquals("Ivanhoe", library.getBooks()[2].getTitle());
     }
 
     @Test

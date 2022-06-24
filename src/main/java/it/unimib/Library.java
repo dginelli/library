@@ -5,8 +5,32 @@ public class Library {
     private final Book[] books;
 
     public Library() {
-        // Bug-05a (Correct version: books = new Book[DEFAULT_SIZE];)
+        // Bug-05b (Correct version: books = new Book[DEFAULT_SIZE];)
         books = new Book[1];
+        addDefaultBooks();
+    }
+
+    public void addDefaultBooks() {
+        Book book1 = new Book("Siddharta",
+                new Author("Hermann", "Hesse", 1877), 142);
+        Book book2 = new Book("La Divina Commedia",
+                new Author("Dante", "Alighieri", 1265), 232);
+        Book book3 = new Book("Ivanhoe",
+                new Author("Walter", "Scott", 1771), 544);
+
+        for (int i = 0; i < DEFAULT_SIZE; i++) {
+            switch (i) {
+                case 0:
+                    books[0] = book1;
+                    break;
+                case 1:
+                    books[1] = book2;
+                    break;
+                case 2:
+                    books[2] = book3;
+                    break;
+            }
+        }
     }
 
     public Library(Book[] books) {
