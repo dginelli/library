@@ -5,8 +5,7 @@ public class Library {
     private final Book[] books;
 
     public Library() {
-        // Bug-05b (Correct version: books = new Book[DEFAULT_SIZE];)
-        books = new Book[1];
+        books = new Book[DEFAULT_SIZE];
         addDefaultBooks();
     }
 
@@ -27,7 +26,8 @@ public class Library {
                     books[1] = book2;
                     break;
                 case 2:
-                    books[2] = book3;
+                    // Bug-06a (Correct version: books[2] = book3; or books[i] = book3;)
+                    books[20] = book3;
                     break;
             }
         }
